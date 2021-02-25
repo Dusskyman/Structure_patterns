@@ -1,11 +1,12 @@
-import 'Adapt.dart';
-import 'Target.dart';
+import 'StrageInterface.dart';
+import 'BaseInterface.dart';
 
-class Adapter implements Target {
-  final Adapt _adapt;
-  Adapter(this._adapt);
+class Adapter extends BaseInterface {
+  final StrageInterface _strageInterface;
+  Adapter(this._strageInterface);
   @override
-  String inKilo() {
-    return 'This is ${this._adapt.inPound()}';
+  String baseRequest(){
+    return 'Translated: ' + this._strageInterface.specificRequest().split('').reversed.join();
+
   }
 }

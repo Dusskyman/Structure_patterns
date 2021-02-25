@@ -11,7 +11,7 @@ class Client {
 
 main(List<String> args) {
   Client client = Client();
-  var simple = ConcreteComponent();
+  AComponent simple = ConcreteComponent();
   print('Client: I get a simple component:');
   client.clientCode(simple);
   ConcreteDecoratorA decoratorA = ConcreteDecoratorA(simple);

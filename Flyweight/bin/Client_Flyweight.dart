@@ -64,7 +64,7 @@ void main() {
   var doc = Document();
 
   doc.write(6, "t");
-  doc.write(7, "u");
+  doc.write(7, "t");
   doc.write(1, "A");
   doc.write(2, "y");
   doc.write(7, "s");
