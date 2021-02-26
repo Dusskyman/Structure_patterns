@@ -8,7 +8,7 @@ class ParticleFactory {
   List<Particle> particleList = [];
   Particle addNewParticle(String color, String shape) {
     for (var i = 0; i < particleList.length; i++) {
-      if (color == particleList[i].color) {
+      if (color == particleList[i].color && shape == particleList[i].shape) {
         return particleList[i];
       }
     }
@@ -20,7 +20,6 @@ class ParticleFactory {
 
 class ParticleCollection {
   ParticleFactory particleFactory = ParticleFactory();
-  int particlesCount = 0;
   List<Particle> patcticleCollection = [];
   ParticleCollection() {
     patcticleCollection = List<Particle>();
@@ -33,25 +32,26 @@ class ParticleCollection {
 
   void addTo(String color, String shape) {
     patcticleCollection.add(particleFactory.addNewParticle(color, shape));
-    particlesCount++;
   }
 
   int get created => particleFactory.particleList.length;
+  int get drawed => patcticleCollection.length;
 }
 
 main(List<String> args) {
   ParticleCollection particleCollection = ParticleCollection();
-  ParticleFactory particleFactory = ParticleFactory();
 
   particleCollection.addTo('Red', 'Circle');
   particleCollection.addTo('Red', 'Circle');
   particleCollection.addTo('Blue', 'Square');
   particleCollection.addTo('Green', 'Square');
   particleCollection.addTo('Green', 'Square');
-   particleCollection.addTo('Blue', 'Square');
+  particleCollection.addTo('Blue', 'Cirle');
+  particleCollection.addTo('White', 'Cirle');
+  particleCollection.addTo('White', 'Cirle');
 
   particleCollection.export();
 
-  print('Drawed particals: ${particleCollection.particlesCount}');
+  print('Drawed particals: ${particleCollection.drawed}');
   print('Created particals: ${particleCollection.created}');
 }
