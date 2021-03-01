@@ -31,7 +31,9 @@ class ParticleCollection {
   }
 
   void addTo(String color, String shape) {
-    patcticleCollection.add(particleFactory.addNewParticle(color, shape));
+    patcticleCollection.add(
+      particleFactory.addNewParticle(color, shape),
+    );
   }
 
   int get created => particleFactory.particleList.length;
